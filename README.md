@@ -14,14 +14,18 @@ enable-tftp
 tftp-root=/srv/tftp
 dhcp-boot=beagle.img
 ```
-> set the ip of interface.
+
+> Set the ip address of an interface.
+
 ```
 ifconfig usb0 192.168.0.51
 ```
+
 > Copy the compiled binary `beagle.img` in /srv/tfp/
 > Restart dnsmasq.service
 > Press and hold S2 switch of BBB and connect the USB power supply to PC.
 > Verify the service is started successfully and BOOTP log exists 
+
 ```
 systemctl status dnsmasq.service
 sudo cat /var/log/syslog | grep dnsmasq | grep BOOTP
